@@ -4,10 +4,12 @@
 Personal handwriting style fonts generation is a diverting but time-consuming task due to the large size of Chinese character set. In addition, unlike standard printed style fonts, hand-writing style fonts are of more complicated stroke and glyph feature. In this paper, an improved network architecture is proposed for learning and generation of personal hand-writing style fonts based on small character set. The network is composed of three sub-networks: 1) a classification network for identifying the general style of the target fonts; 2) a generating network for transferring the identified fonts to the target fonts; 3) a discriminating network for differentiating the generated image from real ones. The experiments revealed the effectiveness of the model for generating personal hand-writing style font with relatively small data size, reduction by a scale of 10 comparing to previous reported works.
 
 [Learning and Generation of Personal Handwriting Style Chinese Font](https://www.researchgate.net/publication/331564603_Learning_and_Generation_of_Personal_Handwriting_Style_Chinese_Font)
+
 Yutian Lei, Liguang Zhou, Tianjiao Pan, Huihuan Qiann, Zhenglong Sun
+
 The IEEE International Conference on Robotics and Biomimetics, 2018
  
- **Note**: The code and dataset will be released in the future.
+ **Note**: The code and dataset will be released in the future`.
 
 ## Network Structure
 ### Original Model
@@ -32,6 +34,7 @@ We train the aforementioned baseline models as well as ours using 500, approxima
 </p>
 
 The classification network is proposed in our model to solve the dilemma that it is difficult generate a new handwriting font using only one pre-determined standard font like Song. Here specifically, only 300 characters are randomly selected as the training set to test the effectiveness of the classification network in a relatively small data size.
+
 As shown above, the experiments are taken and compared between the case without classifier using a randomly selected source font (Song in this case) and the case with classifier using the fonts identified by the classification network as the source font. It is obvious that the classification network improves the performance of learning and generation for the reason that it can provide priori knowledge to subsequent networks, and thus help to save their efforts in learning.
 
 
@@ -52,7 +55,9 @@ To reduce the workload of generating or designing a new font, it is one of the m
 <p align="center">
 <img src="assets/experiment5.png" alt="Different Fonts"  width="600"/>
 </p>
-To further demonstrate validity of the proposed model, the experiments with 43 other style fonts are also taken. Three of these fonts are shown above as the ground truth 1-3. For each font, 500 characters are randomly selected from the list to be used as the training set and the rest characters are used for testing. According to the training characters, the classification network classified the three test fonts as Semi-cursive, Regular and Hand-Writing Font 2 in our source font set. The experiment shows satisfactory result for the test font 2, which has highly regular pattern, while the results for the test font 1 and 3 are of a few minor flaws, since for font 1 the joined-up writing style is more difficult to learn using a small data size, and for the font 3, it’s of more personal style and thus less regular pattern.
+To further demonstrate validity of the proposed model, the experiments with 43 other style fonts are also taken. Three of these fonts are shown above as the ground truth 1-3. For each font, 500 characters are randomly selected from the list to be used as the training set and the rest characters are used for testing. According to the training characters, the classification network classified the three test fonts as Semi-cursive, Regular and Hand-Writing Font 2 in our source font set. 
+
+The experiment shows satisfactory result for the test font 2, which has highly regular pattern, while the results for the test font 1 and 3 are of a few minor flaws, since for font 1 the joined-up writing style is more difficult to learn using a small data size, and for the font 3, it’s of more personal style and thus less regular pattern.
 
 ## Acknowledgements
 Code derived and rehashed from:
